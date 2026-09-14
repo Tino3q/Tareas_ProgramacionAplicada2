@@ -1,0 +1,10 @@
+# Excluir dependencias de Node.js en cualquier subcarpeta
+**/node_modules/
+
+# Excluir archivos de variables de entorno (claves de Neon/Base de datos)
+**/.env
+
+# Archivos de sistema y logs
+*.log
+.DS_Store
+Thumbs.db
