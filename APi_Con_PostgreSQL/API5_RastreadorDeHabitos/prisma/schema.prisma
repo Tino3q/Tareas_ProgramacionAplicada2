@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Habito {
+  id        Int        @id @default(autoincrement())
+  nombre    String
+  meta      String
+  registros Registro[]
+}
+
+model Registro {
+  id        Int      @id @default(autoincrement())
+  fecha     String
+  completado Boolean @default(true)
+  habitoId  Int
+  habito    Habito   @relation(fields: [habitoId], references: [id], onDelete: Cascade)
+}
